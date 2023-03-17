@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 import logo from "../assets/naruto.svg";
-import styles from "./navbar.module.scss";
+import styles from "../styles/components/_navbar.scss";
 import menu_night from "../assets/menu_night.svg";
 import menu_light from "../assets/menu_light.svg";
 import moon from "../assets/moon.svg";
@@ -42,7 +42,7 @@ const Navbar = ({ setTheme }) => {
   }, [theme]);
 
   return (
-    <nav className={`${styles.nav} ${theme}`}>
+    <nav className={`nav ${theme}`}>
       <div className="nav__container">
         <div className="nav__brand">
           <img src={logo} />

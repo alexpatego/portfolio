@@ -114,7 +114,7 @@ function Contact() {
             />
           </label>
 
-          <button type="submit">
+          <button type="submit" name="Envoyer">
             {loading ? "En cours d'envoi..." : "Envoyé"}
           </button>
         </form>

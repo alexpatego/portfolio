@@ -1,0 +1,150 @@
+
+@use '../abstract/colors' as *;
+
+
+#works{
+    @media screen and (max-width: 1000px) {
+        margin: 0 1rem;
+    }
+}
+
+.projectcol{
+    @media screen and (max-width: 800px){
+     display: flex;
+     justify-content: center;
+     place-items: center;
+    }
+}
+
+.project {
+    background-color:$blue-1000;
+    padding: 1.25rem; /* equivalent to p-5 */
+    border-radius: 1rem; /* equivalent to rounded-2xl */
+    width: 100%; /* equivalent to w-full */
+    max-width: 26rem; /* equivalent to sm:w-[360px] */
+    @media screen and (max-width: 1000px) and (min-width:400px){
+      margin: 0 1rem;
+    }
+
+  }
+
+
+.project-dark{
+    background-color:$blue-1000;
+}
+
+.project--light{
+    background-color:$white;
+}
+
+
+@media screen and (max-width : 450px) {
+  .project{
+    max-width: 22rem;
+  }
+}
+
+@media screen and (max-width : 400px) {
+  .project{
+    max-width: 20rem;
+  }
+}
+
+  .project__content {
+    position: relative; /* equivalent to 'relative' */
+    width: 100%; /* equivalent to 'w-full' */
+    height: 230px; /* equivalent to 'h-[230px]' */
+
+    &__image{
+      width: 100%; /* equivalent to 'w-full' */
+      height: 100%; /* equivalent to 'h-full' */
+      object-fit: cover; /* equivalent to 'object-cover' */
+      border-radius: 1rem; /* equivalent to 'rounded-2xl' */
+    }
+    &__links{
+      position: absolute; /* equivalent to 'absolute' */
+      top: 0; /* equivalent to 'inset-0' */
+      right: 0; /* equivalent to 'inset-0' */
+      display: flex; /* equivalent to 'flex' */
+      justify-content: flex-end; /* equivalent to 'justify-end' */
+      margin: 0.5rem; /* equivalent to 'm-3' */
+
+      &__source{
+        width: 2.5rem; /* equivalent to 'w-10' */
+        height: 2.5rem; /* equivalent to 'h-10' */
+        border-radius: 9999px; /* equivalent to 'rounded-full' */
+        display: flex; /* equivalent to 'flex' */
+        justify-content: center; /* equivalent to 'justify-center' */
+        align-items: center; /* equivalent to 'items-center' */
+  
+        & img{
+          width: 50%;
+          height: 50%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  .project__description {
+    margin-top: 1.5rem;
+    &__title{
+      font-weight: bold;
+      font-size: 24px;
+      color:white
+    }
+    &__sub{
+      margin-top: 0.5rem;
+      font-size: 14px;
+    }
+    &__tags{
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      &__el{
+        font-size: 16px;
+      }
+      &__demo{
+        width: 2.5rem; /* equivalent to 'w-10' */
+        height: 2.5rem; /* equivalent to 'h-10' */
+        border-radius: 99999px; /* equivalent to 'rounded-full' */
+        display: flex; /* equivalent to 'flex' */
+        justify-content: center; /* equivalent to 'justify-center' */
+        align-items: center;
+        & img{
+          width: 50%;
+          height: 50%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  .project__display{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  
+.project__section--title{
+  font-weight: 900;
+  font-size: 24px;
+
+   /* Media queries */
+   @media (min-width: 640px) {
+    font-size: 30px; /* equivalent to 'sm:text-[60px]' */
+  }
+
+  @media (min-width: 768px) {
+    font-size: 38px; /* equivalent to 'xs:text-[50px]' */
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 45px; /* equivalent to 'lg:text-[80px]' */
+    line-height: 1.225; /* equivalent to 'lg:leading-[98px]' */
+  }
+  }
+  

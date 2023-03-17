@@ -83,9 +83,13 @@ color:#dce763;
     justify-content: center;
     flex-direction: column;
     place-items: center;
+   
     font-size: 18px;
     font-weight: 500;
     padding: 1rem;
+    @media (max-width: 800px) {
+        font-size: 16px;
+      }
     & img{
        height: 50px;
         object-fit: contain;

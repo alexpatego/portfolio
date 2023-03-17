@@ -1,0 +1,104 @@
+@use '../abstract/colors' as *;
+
+// Presentation 
+
+.presentation #a-propos{
+    
+    text-align: left;
+    @media (max-width: 1000px) {
+     font-size: 20px;
+    }
+}
+
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    margin: 1rem;
+
+    & h2 {
+        font-weight: 900;
+        font-size: 24px;
+      
+         /* Media queries */
+         @media (min-width: 640px) {
+          font-size: 30px; /* equivalent to 'sm:text-[60px]' */
+        }
+      
+        @media (min-width: 768px) {
+          font-size: 38px; /* equivalent to 'xs:text-[50px]' */
+        }
+      
+        @media (min-width: 1024px) {
+          font-size: 45px; /* equivalent to 'lg:text-[80px]' */
+          line-height: 1.225; /* equivalent to 'lg:leading-[98px]' */
+        }
+    }
+    @media (min-width: 1200px) {
+        font-size: 24px;
+    }
+
+    &__paragraph{
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 748px){
+        .presentation__paragraph{
+            max-width: 1250px;
+           
+        }
+    }
+
+    .presentation__links{
+        display: flex;
+        place-items: center;
+        margin-right: auto;
+        flex-wrap: wrap;
+
+        &__socials{
+          margin-right: auto;
+
+          & img {
+            height: 80px;
+          }
+        }
+
+        & a{
+          text-decoration: none;
+
+          &  button{
+            display: flex;
+            margin: 0 auto;
+            background-color: $blue-000;
+            color: $white;
+            padding: 1rem;
+            border-radius: 10px;
+            border: none;
+            font-size: 24px;
+            place-items: center;
+            cursor: pointer;
+            @media (max-width: 1200px) {
+                font-size: 18px;
+            }
+            img{
+                height: 35px;
+                @media (max-width: 1200px) {
+                    height: 25px;
+                }
+            }
+          }
+        }
+    }
+
+}
+
+.introduction--dark{
+    background-color:$blue-1000;
+}
+
+.introduction--light{
+    background-color: $white;
+}

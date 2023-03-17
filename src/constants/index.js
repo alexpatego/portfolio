@@ -58,7 +58,7 @@ const about = [
     name: "Bonjour, Patego Alexandre, Développeur",
     title: "A propos de moi",
     description:
-      "Je suis un jeune Développeur Web fraichement diplomé à l'issu d'une formation OpenClassroom, je souhaite désormais continuer à me former et je suis à la recherche d'une alternance en tant que Développeur Front-End. Mes différents projets m'ont permis d'obtenir des compétences en Html, Css et Javascript et plusieurs Frameworks tels que React, Node.js, MongoDb ou encore Express.js. Découvrez mes projets !",
+      "Je suis un jeune Développeur Web fraîchement diplômé à l'issue d'une formation avec OpenClassroom, je suis à la recherche d'une alternance en tant que Développeur Front-End ou Full Stack afin de poursuivre ma formation. Les différents projets que j'ai effectués m'ont permis d'obtenir des compétences en HTML, CSS et JavaScript et plusieurs frameworks tels que React ou ThreeJS qui ont d'ailleurs permis de construire ce site. Je vous invite à découvrir mes projets ! ",
   },
 ];
 

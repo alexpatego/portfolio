@@ -1,3 +1,8 @@
 @use "./abstract/colors.scss";
 @use "./base/base.scss";
-@use "../components/navbar.module.scss"
+
+@use "./components/_navbar.scss";
+@use "./components/_about.scss";
+@use "./components/_works.scss";
+@use "./components/_contact.scss";
+@use "./components/_footer.scss";

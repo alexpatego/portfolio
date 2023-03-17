@@ -19,7 +19,10 @@ const ProjectCard = ({
 }) => {
   const { theme } = useContext(ThemeContext);
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className="projectcol"
+    >
       <Tilt
         options={{
           max: 45,
