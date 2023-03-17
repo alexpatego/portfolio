@@ -1,6 +1,6 @@
 $white: #EEEEEE;
-$white-2: #F0E7DB;
-$black: #1A202C;
+$white-2: #dccebb;
+$black: #0f131a;
 
 $red-400:#FF8787;
 $red-500:#FF6B6B;
@@ -22,7 +22,9 @@ $blue-600:#228BE6;
 $blue-700:#1C7ED6;
 $blue-800:#1971C2;
 
-$blue-900:#020b13;
+$blue-000:#132497;
+
+$blue-900:#021221;
 $blue-1000:#02090f;
 
 $orange-400:#FFA94D;
@@ -52,4 +54,48 @@ $background:$dark-100;
 $background-dark:$dark-600;
 $background-amoled:$dark-900;
 
+.pinkTAG{
+color: #c862e4;
+}
 
+.purpleTAG{
+color:#8315c8;
+}
+
+.orangeTAG{
+color:#de9332;
+}
+
+.blueTAG{
+color:#388cf2;
+}
+
+.yellowTAG{
+color:#dce763; 
+}
+
+
+// footer
+
+.footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 1rem;
+    & img{
+       height: 50px;
+        object-fit: contain;
+    }
+}
+
+.footer--light{
+    background-color: $white;
+}
+
+.footer--dark{
+    background-color: $blue-1000;
+}

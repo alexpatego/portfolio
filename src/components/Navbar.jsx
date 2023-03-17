@@ -1,17 +1,18 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
-import logo from "../assets/alexandrie.svg";
+import logo from "../assets/naruto.svg";
 import styles from "./navbar.module.scss";
 import menu_night from "../assets/menu_night.svg";
 import menu_light from "../assets/menu_light.svg";
 import moon from "../assets/moon.svg";
 import sun from "../assets/sun.svg";
 
-export const Navbar = ({ setTheme }) => {
+const Navbar = ({ setTheme }) => {
   const [toggle, setToggle] = useState(false);
   const { theme } = useContext(ThemeContext);
   const [animateThemeChange, setAnimateThemeChange] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (animateThemeChange) {
@@ -53,22 +54,58 @@ export const Navbar = ({ setTheme }) => {
           } ${menuBackgroundClass} text`}
         >
           <li>
-            <Link to="/a-propos" className="text" onClick={toggleMenu}>
+            <Link
+              to="/a-propos"
+              className="text"
+              onClick={() => {
+                document
+                  .querySelector("#a-propos")
+                  .scrollIntoView({ behavior: "smooth" });
+                toggleMenu();
+              }}
+            >
               A propos
             </Link>
           </li>
           <li>
-            <Link to="/experiences" className="text" onClick={toggleMenu}>
+            <Link
+              to="/experiences"
+              className="text"
+              onClick={() => {
+                document
+                  .querySelector("#works")
+                  .scrollIntoView({ behavior: "smooth" });
+                toggleMenu();
+              }}
+            >
               Expériences
             </Link>
           </li>
           <li>
-            <Link to="/works" className="text" onClick={toggleMenu}>
-              Works
+            <Link
+              to="/projets"
+              className="text"
+              onClick={() => {
+                document
+                  .querySelector("#works")
+                  .scrollIntoView({ behavior: "smooth" });
+                toggleMenu();
+              }}
+            >
+              Projets
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="text" onClick={toggleMenu}>
+            <Link
+              to="/contact"
+              className="text"
+              onClick={() => {
+                document
+                  .querySelector("#contact")
+                  .scrollIntoView({ behavior: "smooth" });
+                toggleMenu();
+              }}
+            >
               Contact
             </Link>
           </li>
@@ -107,3 +144,5 @@ export const Navbar = ({ setTheme }) => {
     </nav>
   );
 };
+
+export default Navbar;

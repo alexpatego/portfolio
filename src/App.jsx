@@ -1,6 +1,14 @@
 import React, { useContext } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Navbar from "./components";
+import {
+  Navbar,
+  Presentation,
+  Technologies,
+  Works,
+  Footer,
+  Hero,
+  Contact,
+} from "./components";
 import { ThemeContext } from "./context/ThemeContext";
 import "./styles/_main.scss";
 
@@ -9,10 +17,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={theme}>
-        <Navbar setTheme={setTheme} />
-        <div className="background flex">
-          <h1 className="text">Hello World!</h1>
+      <div className={`relative z-0 ${theme}`}>
+        <div className="background">
+          <Navbar setTheme={setTheme} />
+          <Hero />
+          <Presentation setTheme={setTheme} />
+          <Technologies />
+          <Works />
+          <Contact />
+          <Footer setTheme={setTheme} />
         </div>
       </div>
     </BrowserRouter>
