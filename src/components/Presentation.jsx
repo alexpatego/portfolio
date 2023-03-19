@@ -39,7 +39,12 @@ const Presentation = () => {
             }
           />
         </div>
-        <a href="../assets/pdf/cv_alexandre_patego.pdf" download="">
+        <a
+          href={`${
+            import.meta.env.BASE_URL
+          }/src/assets/pdf/cv_alexandre_patego.pdf`}
+          download=""
+        >
           <button>
             Télécharger CV
             <span>

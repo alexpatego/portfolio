@@ -67,7 +67,7 @@ const Navbar = ({ setTheme }) => {
               A propos
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               to="/experiences"
               className="text"
@@ -80,7 +80,7 @@ const Navbar = ({ setTheme }) => {
             >
               Expériences
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to="/projets"
