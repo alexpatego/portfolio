@@ -58,7 +58,7 @@ const about = [
     name: "Bonjour, Patego Alexandre, Développeur",
     title: "A propos de moi",
     description:
-      "Je suis un jeune Développeur Web fraîchement diplômé à l'issue d'une formation avec OpenClassroom, je suis à la recherche d'une alternance en tant que Développeur Front-End ou Full Stack afin de poursuivre ma formation. Les différents projets que j'ai effectués m'ont permis d'obtenir des compétences en HTML, CSS et JavaScript et plusieurs frameworks tels que React ou ThreeJS qui ont d'ailleurs permis de construire ce site. Je vous invite à découvrir mes projets ! ",
+      "Je suis un jeune Développeur Web diplômé à l'issue d'une formation avec OpenClassroom, je suis à la recherche d'une alternance en tant que Développeur Front-End ou Full Stack afin de poursuivre ma formation. Les différents projets que j'ai effectués m'ont permis d'obtenir des compétences en HTML, CSS et JavaScript et plusieurs frameworks tels que React ou ThreeJS qui ont d'ailleurs permis de construire ce site. Je vous invite à découvrir mes projets ! ",
   },
 ];
 
@@ -82,12 +82,13 @@ const projects = [
       },
     ],
     image: portofolio,
-    source_code_link: "https://github.com/alexpatego/Portofolio",
+    source_code_link: "https://github.com/alexpatego/portofolio",
     source_live_demo: "",
   },
   {
     name: "Kasa",
-    description: "Le projet 7, site web de reservations immobilières",
+    description:
+      "Le projet 7, site web de locations et réservations immobilières en React ",
     tags: [
       {
         name: "react",
@@ -139,7 +140,7 @@ const projects = [
       },
     ],
     image: kanap,
-    source_code_link: "https://github.com/alexpatego/P3-ohmyfood",
+    source_code_link: "https://github.com/alexpatego/P5-KANAP",
   },
   {
     name: "Hot Takes",
@@ -160,7 +161,7 @@ const projects = [
       },
     ],
     image: hottakes,
-    source_code_link: "https://github.com/alexpatego/P3-ohmyfood",
+    source_code_link: "https://github.com/alexpatego/P6-HotTakes-BACKEND",
   },
   {
     name: "Booki",
@@ -176,8 +177,8 @@ const projects = [
       },
     ],
     image: booki,
-    source_code_link: "https://github.com/alexpatego/P3-ohmyfood",
-    source_live_demo: "https://alexpatego.github.io/P3-ohmyfood/",
+    source_code_link: "https://github.com/alexpatego/P2-Booki",
+    source_live_demo: "https://alexpatego.github.io/P2-Booki",
   },
 ];
 

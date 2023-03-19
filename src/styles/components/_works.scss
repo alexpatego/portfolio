@@ -68,7 +68,11 @@
       display: flex; /* equivalent to 'flex' */
       justify-content: flex-end; /* equivalent to 'justify-end' */
       margin: 0.5rem; /* equivalent to 'm-3' */
-
+      cursor: pointer;
+      :hover {
+        transform: scale(1.2);
+        transition: all 0.2s ease-in-out;
+      }
       &__source{
         width: 2.5rem; /* equivalent to 'w-10' */
         height: 2.5rem; /* equivalent to 'h-10' */
@@ -112,11 +116,16 @@
         display: flex; /* equivalent to 'flex' */
         justify-content: center; /* equivalent to 'justify-center' */
         align-items: center;
+        :hover {
+          transform: scale(1.2);
+          transition: all 0.2s ease-in-out;
+        }
+      }
         & img{
           width: 50%;
           height: 50%;
           object-fit: contain;
-        }
+          cursor: pointer;
       }
     }
   }

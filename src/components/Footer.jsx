@@ -15,15 +15,15 @@ function Footer() {
       }`}
     >
       <p>2023 © Alexandre Patego Portofolio</p>
-      <div>
+      <div className="footer__links">
         <img
           src={theme === "dark" ? githubDark : githubLight}
-          alt=""
+          alt="github"
           onClick={() => window.open("https://github.com/alexpatego", "_blank")}
         />
         <img
           src={theme === "dark" ? linkedinDark : linkedinLight}
-          alt=""
+          alt="linkedin"
           onClick={() =>
             window.open(
               "https://www.linkedin.com/in/alexandre-patego-07481b198/",

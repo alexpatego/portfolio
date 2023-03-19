@@ -131,6 +131,7 @@
     display: inline-flex;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
 
    .moon {
         display: flex;
@@ -147,6 +148,11 @@
         margin-left: 1rem;
         background-color: #F5AC55;
         border-radius: 5px;
+    }
+
+    :hover {
+      transform: scale(1.03);
+      transition: all 0.2s ease-in-out;
     }
 
   }
