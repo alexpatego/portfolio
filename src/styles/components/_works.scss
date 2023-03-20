@@ -54,6 +54,7 @@
     position: relative; /* equivalent to 'relative' */
     width: 100%; /* equivalent to 'w-full' */
     height: 230px; /* equivalent to 'h-[230px]' */
+    cursor: pointer;
 
     &__image{
       width: 100%; /* equivalent to 'w-full' */

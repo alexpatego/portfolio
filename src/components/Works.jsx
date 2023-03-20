@@ -34,7 +34,12 @@ const ProjectCard = ({
         }`}
       >
         <div className="project__content">
-          <img src={image} alt={name} className="project__content__image" />
+          <img
+            src={image}
+            alt={name}
+            className="project__content__image"
+            onClick={() => window.open(source_code_link, "_blank")}
+          />
           <div className="project__content__links">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
