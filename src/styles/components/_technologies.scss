@@ -1,0 +1,21 @@
+@use '../abstract/colors' as *;
+
+.tech{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem auto 0;
+    max-width: 1200px;
+    gap: 2.5rem;
+    &__balls {
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .tech{
+        
+    }
+}
