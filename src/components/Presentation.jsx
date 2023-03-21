@@ -40,9 +40,7 @@ const Presentation = () => {
           />
         </div>
         <a
-          href={`${
-            import.meta.env.BASE_URL
-          }src/assets/pdf/cv_alexandre_patego.pdf`}
+          href={`./cv_alexandre_patego.pdf`}
           download="cv_alexandre_patego.pdf"
         >
           <button>
