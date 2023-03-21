@@ -55,7 +55,7 @@ const technologies = [
 
 const about = [
   {
-    name: "Bonjour, Patego Alexandre, Développeur",
+    name: "Bonjour, Alexandre Patego, Développeur",
     title: "A propos de moi",
     description:
       "Je suis un jeune Développeur Web diplômé à l'issue d'une formation avec OpenClassroom, je suis à la recherche d'une alternance en tant que Développeur Front-End ou Full Stack afin de poursuivre ma formation. Les différents projets que j'ai effectués m'ont permis d'obtenir des compétences en HTML, CSS et JavaScript et plusieurs frameworks tels que React ou ThreeJS qui ont d'ailleurs permis de construire ce site. Je vous invite à découvrir mes projets ! ",

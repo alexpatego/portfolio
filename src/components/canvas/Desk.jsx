@@ -1,15 +1,20 @@
-import React, { Suspense, useEffect, useState, useMemo, useRef } from "react";
+import React, {
+  Suspense,
+  useEffect,
+  useState,
+  useMemo,
+  useRef,
+  useCallback,
+} from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Desk = ({ isMobile }) => {
-  const desktop = useMemo(() => useGLTF("./desk/desktop.gltf").scene, []);
-
+const Desk = React.memo(({ isMobile, desktop }) => {
   const deskRef = useRef();
 
-  useFrame(() => {
+  const handleFrame = useCallback(() => {
     if (deskRef.current) {
       deskRef.current.position.set(
         isMobile ? 0 : -0.25,
@@ -22,7 +27,9 @@ const Desk = ({ isMobile }) => {
         isMobile ? 0.25 : 0.3
       );
     }
-  });
+  }, [isMobile]);
+
+  useFrame(handleFrame);
 
   return (
     <mesh>
@@ -46,16 +53,21 @@ const Desk = ({ isMobile }) => {
       />
     </mesh>
   );
-};
+});
 
 const DeskCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const desktop = useGLTF("./desk/desktop.gltf").scene;
 
-  window
-    .matchMedia("(max-width: 500px)")
-    .addEventListener("change", (event) => {
-      setIsMobile(event.matches);
-    });
+  useMemo(() => desktop, [desktop]);
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 500px)")
+      .addEventListener("change", (event) => {
+        setIsMobile(event.matches);
+      });
+  }, []);
 
   return (
     <Canvas
@@ -67,11 +79,11 @@ const DeskCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          enableZoom={false}
+          enableZoom={true}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Desk isMobile={isMobile} />
+        <Desk isMobile={isMobile} desktop={desktop} />
       </Suspense>
 
       <Preload all />

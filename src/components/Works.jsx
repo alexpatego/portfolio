@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import SectionWrap from "../hoc/SectionWrap";
 import github from "../assets/github.png";
@@ -50,45 +51,47 @@ const ProjectCard = ({
       transition={transition}
       className="projectcol"
     >
-      <div
-        className={`project ${
-          theme === "dark" ? "project--dark" : "project--light"
-        }`}
-        onClick={handleCardClick}
-      >
-        <div className="project__content">
-          <img src={image} alt={name} className="project__content__image" />
-          <div className="project__content__links">
-            <div className="black-gradient project__content__links__source">
-              <img src={github} alt="source code" />
+      <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15}>
+        <div
+          className={`project ${
+            theme === "dark" ? "project--dark" : "project--light"
+          }`}
+          onClick={handleCardClick}
+        >
+          <div className="project__content">
+            <img src={image} alt={name} className="project__content__image" />
+            <div className="project__content__links">
+              <div className="black-gradient project__content__links__source">
+                <img src={github} alt="source code" />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="project__description">
-          <h3 className="project__description__title text">{name}</h3>
-          <p className="project__description__sub text">{description}</p>
-        </div>
+          <div className="project__description">
+            <h3 className="project__description__title text">{name}</h3>
+            <p className="project__description__sub text">{description}</p>
+          </div>
 
-        <div className="project__description__tags">
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`${tag.color} project__description__tags__el`}
-            >
-              #{tag.name}
-            </p>
-          ))}
-          {source_live_demo && source_live_demo.trim() !== "" && (
-            <div
-              className="project__description__tags__demo blue-gradient"
-              onClick={handleDemoClick}
-            >
-              <img src={demo} alt="source code" />
-            </div>
-          )}
+          <div className="project__description__tags">
+            {tags.map((tag) => (
+              <p
+                key={`${name}-${tag.name}`}
+                className={`${tag.color} project__description__tags__el`}
+              >
+                #{tag.name}
+              </p>
+            ))}
+            {source_live_demo && source_live_demo.trim() !== "" && (
+              <div
+                className="project__description__tags__demo blue-gradient"
+                onClick={handleDemoClick}
+              >
+                <img src={demo} alt="source code" />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </Tilt>
     </motion.div>
   );
 };
@@ -111,12 +114,3 @@ const Works = () => {
 };
 
 export default SectionWrap(Works, "");
-
-// .project__content__image--tilt {
-//   transform-style: preserve-3d;
-//   transition: transform 0.5s ease-out;
-// }
-
-// .project__content__image--tilt:hover {
-//   transform: rotateY(8deg) rotateX(-8deg);
-// }

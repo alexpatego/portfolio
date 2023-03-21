@@ -14,6 +14,7 @@
      justify-content: center;
      place-items: center;
     }
+   
 }
 
 .project {
@@ -28,6 +29,15 @@
 
   }
 
+// .project__content__image--tilt {
+//   transform-style: preserve-3d;
+//   transition: transform 0.5s ease-out;
+// }
+
+// .project__content__image--tilt:hover {
+//   transform: rotateY(8deg) rotateX(-8deg);
+// }
+
 
 .project-dark{
     background-color:$blue-1000;
@@ -40,13 +50,13 @@
 
 @media screen and (max-width : 450px) {
   .project{
-    max-width: 22rem;
+    max-width: 24rem;
   }
 }
 
 @media screen and (max-width : 400px) {
   .project{
-    max-width: 20rem;
+    max-width: 22rem;
   }
 }
 
