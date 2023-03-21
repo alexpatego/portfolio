@@ -1,11 +1,10 @@
-import Tilt from "react-parallax-tilt";
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import SectionWrap from "../hoc/SectionWrap";
 import github from "../assets/github.png";
 import demo from "../assets/demo.svg";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { textVariant } from "../utils/motion";
 import { ThemeContext } from "../context/ThemeContext";
 
 const ProjectCard = ({
@@ -18,33 +17,49 @@ const ProjectCard = ({
   source_live_demo,
 }) => {
   const { theme } = useContext(ThemeContext);
+
+  const handleCardClick = () => {
+    window.open(source_code_link, "_blank");
+  };
+
+  const handleDemoClick = () => {
+    if (source_live_demo && source_live_demo.trim() !== "") {
+      window.open(source_live_demo, "_blank");
+    }
+  };
+
+  const transition = {
+    duration: 0.6,
+    delay: index * 0.2,
+  };
+
   return (
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 20,
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+        },
+      }}
+      transition={transition}
       className="projectcol"
     >
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
+      <div
         className={`project ${
           theme === "dark" ? "project--dark" : "project--light"
         }`}
+        onClick={handleCardClick}
       >
         <div className="project__content">
-          <img
-            src={image}
-            alt={name}
-            className="project__content__image"
-            onClick={() => window.open(source_code_link, "_blank")}
-          />
+          <img src={image} alt={name} className="project__content__image" />
           <div className="project__content__links">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient project__content__links__source"
-            >
+            <div className="black-gradient project__content__links__source">
               <img src={github} alt="source code" />
             </div>
           </div>
@@ -67,21 +82,23 @@ const ProjectCard = ({
           {source_live_demo && source_live_demo.trim() !== "" && (
             <div
               className="project__description__tags__demo blue-gradient"
-              onClick={() => window.open(source_live_demo, "_blank")}
+              onClick={handleDemoClick}
             >
               <img src={demo} alt="source code" />
             </div>
           )}
         </div>
-      </Tilt>
+      </div>
     </motion.div>
   );
 };
 
 const Works = () => {
+  const textAnimation = textVariant(0.6);
+
   return (
     <>
-      <motion.div variants={textVariant()} id="works">
+      <motion.div variants={textAnimation} id="works">
         <h2 className="text project__section--title">Mes projets</h2>
       </motion.div>
       <div className="project__display">
@@ -94,3 +111,12 @@ const Works = () => {
 };
 
 export default SectionWrap(Works, "");
+
+// .project__content__image--tilt {
+//   transform-style: preserve-3d;
+//   transition: transform 0.5s ease-out;
+// }
+
+// .project__content__image--tilt:hover {
+//   transform: rotateY(8deg) rotateX(-8deg);
+// }

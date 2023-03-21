@@ -1,4 +1,20 @@
 export const textVariant = (delay) => {
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+    return {
+      show: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          duration: 1.25,
+          delay: delay,
+        },
+      },
+    };
+  }
+
   return {
     hidden: {
       y: -50,
