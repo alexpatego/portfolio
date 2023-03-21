@@ -128,7 +128,7 @@ const Navbar = ({ setTheme }) => {
             </Link>
           </li>
         </ul>
-        <div className="Icons">
+        <div className="icons">
           <div className="menu" onClick={toggleMenu}>
             {theme === "dark" ? (
               <img src={menu_night} alt="" className="menu__night" />

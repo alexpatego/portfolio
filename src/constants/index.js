@@ -136,7 +136,7 @@ const projects = [
     tags: [
       {
         name: "javascript",
-        color: "orangeTAG",
+        color: "yellowTAG",
       },
     ],
     image: kanap,
@@ -149,15 +149,15 @@ const projects = [
     tags: [
       {
         name: "mongodb",
-        color: "orangeTAG",
+        color: "greenTAG",
       },
       {
         name: "javascript",
-        color: "purpleTAG",
+        color: "yellowTAG",
       },
       {
         name: "nodeJS",
-        color: "pinkTAG",
+        color: "greenlightTAG",
       },
     ],
     image: hottakes,

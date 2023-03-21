@@ -39,10 +39,7 @@ const Presentation = () => {
             }
           />
         </div>
-        <a
-          href={`./cv_alexandre_patego.pdf`}
-          download="cv_alexandre_patego.pdf"
-        >
+        <a href={`/cv_alexandre_patego.pdf`} download="cv_alexandre_patego.pdf">
           <button>
             Télécharger CV
             <span>

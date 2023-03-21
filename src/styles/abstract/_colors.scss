@@ -44,22 +44,14 @@ $dark-700:#1A1B1E;
 $dark-800:#141517;
 $dark-900:#101113;
 
-$primary: $blue-500;
-$secondary: $orange-500;
-$success-background:$green-400;
-$success-primary:$green-700;
-$danger-background:$red-400;
-$danger-primary:$red-700;
-$background:$dark-100;
-$background-dark:$dark-600;
-$background-amoled:$dark-900;
 
+// tags 
 .pinkTAG{
-color: #c862e4;
+color: #cc5deb;
 }
 
 .purpleTAG{
-color:#8315c8;
+color:#a53ee58f;
 }
 
 .orangeTAG{
@@ -71,35 +63,15 @@ color:#388cf2;
 }
 
 .yellowTAG{
-color:#dce763; 
+color:#becd19; 
+}
+
+.greenTAG{
+color:$green-800; 
+}
+
+.greenlightTAG{
+color: $green-500;
 }
 
 
-// footer
-
-.footer {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    place-items: center;
-   
-    font-size: 18px;
-    font-weight: 500;
-    padding: 1rem;
-    @media (max-width: 800px) {
-        font-size: 16px;
-      }
-    & img{
-       height: 50px;
-        object-fit: contain;
-    }
-}
-
-.footer--light{
-    background-color: $white;
-}
-
-.footer--dark{
-    background-color: $blue-1000;
-}

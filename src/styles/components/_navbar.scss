@@ -1,147 +1,151 @@
 @use '../abstract/colors' as *;
 
+// Navbar container styles
 .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  // Navbar container max width and margins
+  &__container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 80px;
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1;
-
-    &__container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 1rem;
-  
-    }
-    
-    &__brand{
-        display: flex;
-        align-items: center; 
-
-        img{
-            height: 25px;
-            margin-right: 1rem;
-        }
-    }
-
-    h1{
-        font-size: 18px;
-        color: $white;
-    }
-
-
-
-}
-
-.Navbar__links {
-    display: hidden;
-    align-items: center;
-    gap: 2rem;
-    margin-left: auto;
-    li {
-      list-style: none;
-    }
-    
-     a {
-      text-decoration: none;
-      color: #000;
-      font-size: 16px;
-    }
-}
-  
-  
-  @media screen and (min-width:760px){
-    .Navbar__links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        list-style: none;
-        font-weight: bold;
-        cursor: pointer;
-        color: $white;
-        margin-left: auto;
-    }
+    max-width: 1400px;
+    margin: 0 1rem;
   }
-  
 
+  // Navbar brand logo styles
+  &__brand {
+    display: flex;
+    align-items: center;
 
-@media screen and (max-width: 800px) {
-    .Navbar__links {
-      display: none;
-      flex-direction: column;
-      align-items:flex-start;
-      justify-content: center;
-      position: absolute;
-      top: 80px;
-      min-width: 300px;
-      line-height: 10px;
-      right: 0;
-      border-radius: 1rem;
-      padding: 1rem;
-      z-index: 1;
+    // Brand logo image styles
+    img {
+      height: 25px;
       margin-right: 1rem;
     }
+  }
 
-    .Navbar__links--active {
-        display: flex;
-      }
-
-      .Navbar__links li {
-        margin: 10px 0;
-      }
+  // Navbar title styles
+  h1 {
+    font-size: 18px;
+    color: $white;
+  }
 }
 
+// Navbar links styles
+.Navbar__links {
+  display: hidden;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
 
-    .menu{
-        display: none;
-      }
-      
-      @media screen and (max-width: 800px){
-        .menu {
-        display: flex;
-        height: 30px; 
-        width: 30px;
-            &__night{
-                border: 1px solid #EEEEEE;
-                border-radius: 5px;
-            }
-            &__light{
-                border:1px solid #1A202C;
-                border-radius: 5px;
-            }
-        }
-      }
+  // List item styles
+  li {
+    list-style: none;
+  }
 
+  // Anchor tag styles
+  a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .Navbar__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: $white;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Navbar__links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    min-width: 300px;
+    line-height: 10px;
+    right: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    z-index: 1;
+    margin-right: 1rem;
+    // Navbar links styles when active (mobile menu is open)
+    &--active {
+      display: flex;
+    }
+  }
+
+  // List item styles for mobile menu
+  .Navbar__links li {
+    margin: 10px 0;
+  }
+}
+
+// Menu button styles for screens smaller than 800px
+.menu {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    // Night mode button styles
+    &__night {
+      border: 1px solid #EEEEEE;
+      border-radius: 5px;
+    }
+    // Light mode button styles
+    &__light {
+      border: 1px solid #1A202C;
+      border-radius: 5px;
+    }
+  }
+}
+
+// Light mode navbar styles
 .light {
-    background-color: $white;
+  background-color: $white;
 }
 
+// Dark mode navbar styles
 .dark {
-    background-color: $blue-1000;
+  background-color: $blue-1000;
 }
 
-.Icons {
+.icons {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
-
    .moon {
         display: flex;
         height: 30px;
         margin-left: 1rem;
         background-color: #7C2AE8;
         border-radius: 5px;
-    
     }
-
     .sun {
         display: flex;
         width: 30px;
@@ -149,14 +153,11 @@
         background-color: #F5AC55;
         border-radius: 5px;
     }
-
     :hover {
       transform: scale(1.03);
       transition: all 0.2s ease-in-out;
     }
-
   }
-
 
   .light .Navbar__links li:hover, .dark .Navbar__links li:hover{
     transform: scale(1.1);

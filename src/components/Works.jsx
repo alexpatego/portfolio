@@ -26,6 +26,8 @@ const ProjectCard = ({
   const handleDemoClick = () => {
     if (source_live_demo && source_live_demo.trim() !== "") {
       window.open(source_live_demo, "_blank");
+    } else {
+      window.open(source_code_link, "_blank");
     }
   };
 
@@ -56,13 +58,17 @@ const ProjectCard = ({
           className={`project ${
             theme === "dark" ? "project--dark" : "project--light"
           }`}
-          onClick={handleCardClick}
         >
           <div className="project__content">
-            <img src={image} alt={name} className="project__content__image" />
+            <img
+              src={image}
+              alt={name}
+              className="project__content__image"
+              onClick={handleDemoClick}
+            />
             <div className="project__content__links">
               <div className="black-gradient project__content__links__source">
-                <img src={github} alt="source code" />
+                <img src={github} alt="source code" onClick={handleCardClick} />
               </div>
             </div>
           </div>
@@ -82,11 +88,8 @@ const ProjectCard = ({
               </p>
             ))}
             {source_live_demo && source_live_demo.trim() !== "" && (
-              <div
-                className="project__description__tags__demo blue-gradient"
-                onClick={handleDemoClick}
-              >
-                <img src={demo} alt="source code" />
+              <div className="project__description__tags__demo blue-gradient">
+                <img src={demo} alt="existing demo" />
               </div>
             )}
           </div>
