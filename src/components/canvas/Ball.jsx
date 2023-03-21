@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -10,8 +10,10 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
-  const decal = useTexture(props.imgUrl);
+const Ball = ({ imgUrl, isMobile }) => {
+  const decal = useTexture(imgUrl);
+
+  const Material = isMobile ? "basic" : "standard";
 
   return (
     <Float speed={1.25} rotationIntensity={1} floatIntensity={2}>
@@ -19,18 +21,26 @@ const Ball = (props) => {
       <directionalLight position={[0, 0, 0.05]} />
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial
-          color="#EEEEEE"
-          polygonOffset
-          polygonOffsetFactor={-5}
-          flatShading
-        />
+        {Material === "basic" ? (
+          <meshBasicMaterial
+            color="#EEEEEE"
+            polygonOffset
+            polygonOffsetFactor={-5}
+            flatShading
+          />
+        ) : (
+          <meshStandardMaterial
+            color="#EEEEEE"
+            polygonOffset
+            polygonOffsetFactor={-5}
+            flatShading
+          />
+        )}
         <Decal
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
-          flatShading
         />
       </mesh>
     </Float>
@@ -38,6 +48,16 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 500px)")
+      .addEventListener("change", (event) => {
+        setIsMobile(event.matches);
+      });
+  }, []);
+
   return (
     <Canvas
       frameloop="demand"
@@ -45,8 +65,18 @@ const BallCanvas = ({ icon }) => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
+        {isMobile ? (
+          <Ball imgUrl={icon} isMobile={isMobile} />
+        ) : (
+          <>
+            <OrbitControls
+              enableZoom={false}
+              minPolarAngle={Math.PI / 2 - 0.1} // set minimum polar angle
+              maxPolarAngle={Math.PI / 2 + 0.1} // set maximum polar angle
+            />
+            <Ball imgUrl={icon} isMobile={isMobile} />
+          </>
+        )}
       </Suspense>
       <Preload all />
     </Canvas>

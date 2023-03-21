@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 import logo from "../assets/naruto.svg";
-import styles from "../styles/components/_navbar.scss";
+
 import menu_night from "../assets/menu_night.svg";
 import menu_light from "../assets/menu_light.svg";
 import moon from "../assets/moon.svg";
@@ -41,6 +41,24 @@ const Navbar = ({ setTheme }) => {
     }
   }, [theme]);
 
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      if (
+        toggle &&
+        !event.target.closest(".Navbar__links") &&
+        !event.target.closest(".menu")
+      ) {
+        setToggle(false);
+      }
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, [toggle]);
+
   return (
     <nav className={`nav ${theme}`}>
       <div className="nav__container">
@@ -53,9 +71,9 @@ const Navbar = ({ setTheme }) => {
             toggle ? "Navbar__links Navbar__links--active" : "Navbar__links"
           } ${menuBackgroundClass} text`}
         >
-          <li>
+          <li className="Navbar__link">
             <Link
-              to="/a-propos"
+              to="portofolio/a-propos"
               className="text"
               onClick={() => {
                 document
@@ -83,7 +101,7 @@ const Navbar = ({ setTheme }) => {
           </li> */}
           <li>
             <Link
-              to="/projets"
+              to="portofolio/projets"
               className="text"
               onClick={() => {
                 document
@@ -97,7 +115,7 @@ const Navbar = ({ setTheme }) => {
           </li>
           <li>
             <Link
-              to="/contact"
+              to="portofolio/contact"
               className="text"
               onClick={() => {
                 document

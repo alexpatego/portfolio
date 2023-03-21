@@ -158,6 +158,11 @@
   }
 
 
+  .light .Navbar__links li:hover, .dark .Navbar__links li:hover{
+    transform: scale(1.1);
+    transition: 0.3s all ease-in-out;
+  }
+
   .sun--animate {
     animation: sun-animation 1s ease-in-out;
   }

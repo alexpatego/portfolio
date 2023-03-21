@@ -1,5 +1,6 @@
 import React, { useRef, useState, useContext } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 import emailjs from "@emailjs/browser";
 import SectionWrap from "../hoc/SectionWrap";
 import { slideIn } from "../utils/motion";
@@ -15,6 +16,14 @@ function Contact() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [verificationResult, setVerificationResult] = useState(null);
+
+  // API keys
+  const emailjsUserId = import.meta.env.VITE_REACT_APP_EMAILJS_USERID;
+  const emailjsTemplateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATEID;
+  const emailjsServiceId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICEID;
+  const zeroBounceApiKey = import.meta.env.VITE_REACT_APP_ZEROBOUNCE_API_KEY;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,13 +31,28 @@ function Contact() {
     setForm({ ...form, [name]: value });
   };
 
+  const verifyEmail = async (email) => {
+    try {
+      const response = await axios.get(
+        `https://api.zerobounce.net/v2/validate?api_key=${zeroBounceApiKey}&email=${email}`
+      );
+      const { status } = response.data;
+      if (status === "Valid") {
+        setVerificationResult("valid");
+      } else if (status === "Invalid") {
+        setVerificationResult("invalid");
+      } else {
+        setVerificationResult("unknown");
+      }
+    } catch (error) {
+      console.error(error);
+      setVerificationResult("error");
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
-    //0nkcZzTTPHszdwbyH
-    //service_lvbodru
-    //template_7pqgraz
 
     if (!form.name || !form.email || !form.message) {
       setLoading(false);
@@ -38,39 +62,51 @@ function Contact() {
       return;
     }
 
-    emailjs
-      .send(
-        "service_lvbodru",
-        "template_7pqgraz",
-        {
-          from_name: form.name,
-          to_name: "Alexandre Patego",
-          from_email: form.email,
-          to_email: "alexandrepatego@gmail.com",
-          message: form.message,
-        },
-        "0nkcZzTTPHszdwbyH"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Merci pour votre email, je vous recontacte dés que possible.");
+    verifyEmail(form.email).then(() => {
+      if (verificationResult === "valid") {
+        emailjs
+          .send(
+            emailjsServiceId,
+            emailjsTemplateId,
+            {
+              from_name: form.name,
+              to_name: "Alexandre Patego",
+              from_email: form.email,
+              to_email: "alexandrepatego@gmail.com",
+              message: form.message,
+            },
+            emailjsUserId
+          )
+          .then(
+            () => {
+              setLoading(false);
+              alert(
+                "Merci pour votre email, je vous recontacte dès que possible."
+              );
+              setSent(true);
+              setForm({
+                name: "",
+                email: "",
+                message: "",
+              });
+            },
+            (error) => {
+              setLoading(false);
+              console.error(error);
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert(
-            "Il semblerait qu'une erreur se soit glissé dans votre formulaiure..."
+              alert(
+                "Il semblerait qu'une erreur se soit glissé dans votre formulaiure..."
+              );
+            }
           );
-        }
-      );
+      } else if (verificationResult === "invalid") {
+        setLoading(false);
+        alert("L'adresse email n'existe pas.");
+      } else {
+        setLoading(false);
+        alert("Impossible de vérifier l'adresse email.");
+      }
+    });
   };
 
   return (
@@ -115,7 +151,7 @@ function Contact() {
           </label>
 
           <button type="submit" name="Envoyer">
-            {loading ? "En cours d'envoi..." : "Envoyé"}
+            {loading ? "En cours d'envoi..." : sent ? "Envoyé !" : "Envoyer"}
           </button>
         </form>
       </motion.div>
