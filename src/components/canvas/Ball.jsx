@@ -52,7 +52,7 @@ const BallCanvas = ({ icon }) => {
 
   useEffect(() => {
     window
-      .matchMedia("(max-width: 500px)")
+      .matchMedia("(max-width: 600px)")
       .addEventListener("change", (event) => {
         setIsMobile(event.matches);
       });
