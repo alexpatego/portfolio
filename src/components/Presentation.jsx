@@ -14,7 +14,11 @@ const Presentation = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <motion.div className="presentation text" id="a-propos">
+    <motion.div
+      className="presentation text"
+      id="a-propos"
+      variants={slideIn("left", "tween", 0.2, 1)}
+    >
       <div className="presentation__column ">
         <h2>{about[0].name}</h2>
         <p className="presentation__paragraph">{about[0].description}</p>
@@ -40,7 +44,7 @@ const Presentation = () => {
           />
         </div>
         <a
-          href={`/portofolio/public/cv_alexandre_patego.pdf`}
+          href={`./cv_alexandre_patego.pdf`}
           download="cv_alexandre_patego.pdf"
         >
           <button>
