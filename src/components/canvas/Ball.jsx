@@ -16,10 +16,10 @@ const Ball = ({ imgUrl, isMobile }) => {
   const Material = isMobile ? "basic" : "standard";
 
   return (
-    <Float speed={1.25} rotationIntensity={1} floatIntensity={2}>
+    <>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75}>
+      <mesh castShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         {Material === "basic" ? (
           <meshBasicMaterial
@@ -43,19 +43,21 @@ const Ball = ({ imgUrl, isMobile }) => {
           map={decal}
         />
       </mesh>
-    </Float>
+    </>
   );
 };
 
 const BallCanvas = ({ icon }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
   useEffect(() => {
-    window
-      .matchMedia("(max-width: 600px)")
-      .addEventListener("change", (event) => {
-        setIsMobile(event.matches);
-      });
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
