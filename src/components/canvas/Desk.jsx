@@ -8,11 +8,31 @@ import React, {
 } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import CanvasLoader from "../Loader";
+
+// use dracoLoader to make the gltf file less big (seem to be causing problems on mobile devices)
+const loadDesktop = async () => {
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath(
+    "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
+  );
+  dracoLoader.setDecoderConfig({ type: "react" });
+
+  const { scene } = await new GLTFLoader()
+    .setDRACOLoader(dracoLoader)
+    .loadAsync("./desk/desktop.gltf");
+
+  return scene;
+};
 
 const Desk = React.memo(({ isMobile, desktop }) => {
   const deskRef = useRef();
+  const { position, rotation, scale } = useGLTF(
+    "./desk/desktop.gltf",
+    "/draco-gltf/"
+  ).nodes.desktop;
 
   const handleFrame = useCallback(() => {
     if (deskRef.current) {
@@ -57,9 +77,13 @@ const Desk = React.memo(({ isMobile, desktop }) => {
 
 const DeskCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const desktop = useGLTF("./desk/desktop.gltf").scene;
+  const [desktop, setDesktop] = useState(null);
 
-  useMemo(() => desktop, [desktop]);
+  useEffect(() => {
+    loadDesktop().then((scene) => {
+      setDesktop(scene);
+    });
+  }, []);
 
   useEffect(() => {
     window

@@ -8,17 +8,12 @@ import linkedinLight from "../assets/linkedin_light.svg";
 import githubDark from "../assets/github_dark.svg";
 import githubLight from "../assets/github_light.svg";
 import { motion } from "framer-motion";
-import { slideIn } from "../utils/motion";
 
 const Presentation = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <motion.div
-      className="presentation text"
-      id="a-propos"
-      variants={slideIn("left", "tween", 0.2, 1)}
-    >
+    <motion.div className="presentation text" id="a-propos">
       <div className="presentation__column ">
         <h2>{about[0].name}</h2>
         <p className="presentation__paragraph">{about[0].description}</p>
@@ -50,7 +45,7 @@ const Presentation = () => {
           <button>
             Télécharger CV
             <span>
-              <img src={dl} alt="téléchargez" />
+              <img src={dl} alt="téléchargement" />
             </span>
           </button>
         </a>

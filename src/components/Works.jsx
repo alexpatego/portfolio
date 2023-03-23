@@ -19,6 +19,8 @@ const ProjectCard = ({
 }) => {
   const { theme } = useContext(ThemeContext);
 
+  // Links
+
   const handleCardClick = () => {
     window.open(source_code_link, "_blank");
   };

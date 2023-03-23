@@ -73,7 +73,7 @@ const Navbar = ({ setTheme }) => {
         >
           <li className="Navbar__link">
             <Link
-              to="portofolio/a-propos"
+              to="/a-propos"
               className="text"
               onClick={() => {
                 document
@@ -101,7 +101,7 @@ const Navbar = ({ setTheme }) => {
           </li> */}
           <li>
             <Link
-              to="portofolio/projets"
+              to="/projets"
               className="text"
               onClick={() => {
                 document
@@ -115,7 +115,7 @@ const Navbar = ({ setTheme }) => {
           </li>
           <li>
             <Link
-              to="portofolio/contact"
+              to="/contact"
               className="text"
               onClick={() => {
                 document
@@ -129,18 +129,19 @@ const Navbar = ({ setTheme }) => {
           </li>
         </ul>
         <div className="icons">
+          {/* Toggle night mode, light mode tests the theme out*/}
           <div className="menu" onClick={toggleMenu}>
             {theme === "dark" ? (
-              <img src={menu_night} alt="" className="menu__night" />
+              <img src={menu_night} alt="menu" className="menu__night" />
             ) : (
-              <img src={menu_light} alt="" className="menu__light" />
+              <img src={menu_light} alt="menu" className="menu__light" />
             )}
           </div>
           <div>
             {theme === "dark" ? (
               <img
                 src={sun}
-                alt=""
+                alt="light mode"
                 onClick={handleThemeChange}
                 className={`sun ${theme === "dark" && "sun--dark"} ${
                   animateThemeChange && "sun--animate"
@@ -149,7 +150,7 @@ const Navbar = ({ setTheme }) => {
             ) : (
               <img
                 src={moon}
-                alt=""
+                alt="night mode"
                 onClick={handleThemeChange}
                 className={`moon ${theme === "light" && "moon--light"} ${
                   animateThemeChange && "moon--animate"

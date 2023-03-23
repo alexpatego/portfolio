@@ -13,7 +13,7 @@ import CanvasLoader from "../Loader";
 const Ball = ({ imgUrl, isMobile }) => {
   const decal = useTexture(imgUrl);
 
-  const Material = isMobile ? "basic" : "standard";
+  const Material = isMobile ? "basic" : "standard"; // if mobile mesh is basic material so it renders more easily
 
   return (
     <>
@@ -68,7 +68,7 @@ const BallCanvas = ({ icon }) => {
     >
       <Suspense fallback={<CanvasLoader />}>
         {isMobile ? (
-          <Ball imgUrl={icon} isMobile={isMobile} />
+          <Ball imgUrl={icon} isMobile={isMobile} /> // if mobile, ball doesn't rotate
         ) : (
           <>
             <OrbitControls

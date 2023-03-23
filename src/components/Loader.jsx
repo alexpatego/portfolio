@@ -3,6 +3,7 @@ import { Html, useProgress } from "@react-three/drei";
 const CanvasLoader = () => {
   const { progress } = useProgress();
 
+  //loader for threejs
   return (
     <Html
       as="div"
@@ -14,7 +15,7 @@ const CanvasLoader = () => {
         flexDirection: "column",
       }}
     >
-      <span></span>
+      <span className="canvas-loader"></span>
       <p
         style={{
           fontSize: 14,

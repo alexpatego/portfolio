@@ -1,16 +1,18 @@
 import css from "../assets/technologies/css.png";
-import figma from "../assets/technologies/figma.png";
 import git from "../assets/technologies/git.png";
 import html from "../assets/technologies/html.png";
 import javascript from "../assets/technologies/javascript.png";
 import mongodb from "../assets/technologies/mongodb.png";
-import nextjs from "../assets/technologies/nextjs.png";
 import nodejs from "../assets/technologies/nodejs.png";
 import react from "../assets/technologies/reactjs.png";
 import sass from "../assets/technologies/sass.png";
+
+// could be used
 import tailwind from "../assets/technologies/tailwind.png";
 import threejs from "../assets/technologies/threejs.svg";
+import figma from "../assets/technologies/figma.png";
 
+// projects
 import kasa from "../assets/works/kasaP7.png";
 import ohmyfood from "../assets/works/ohmyfoodP3.png";
 import kanap from "../assets/works/kanapP5.png";
@@ -104,7 +106,7 @@ const projects = [
       },
     ],
     image: kasa,
-    source_code_link: "https://github.com/alexpatego/P7-KASA",
+    source_code_link: "https://github.com/alexpatego/p7-kasa",
     source_live_demo: "https://alexpatego.github.io/kasa2/",
   },
   {
@@ -126,8 +128,8 @@ const projects = [
       },
     ],
     image: ohmyfood,
-    source_code_link: "https://github.com/alexpatego/P3-ohmyfood",
-    source_live_demo: "https://alexpatego.github.io/P3-ohmyfood/",
+    source_code_link: "https://github.com/alexpatego/p3-ohmyfood",
+    source_live_demo: "https://alexpatego.github.io/p3-ohmyfood/",
   },
   {
     name: "Kanap",
@@ -140,7 +142,7 @@ const projects = [
       },
     ],
     image: kanap,
-    source_code_link: "https://github.com/alexpatego/P5-KANAP",
+    source_code_link: "https://github.com/alexpatego/p5-kanap",
   },
   {
     name: "Hot Takes",
@@ -161,7 +163,7 @@ const projects = [
       },
     ],
     image: hottakes,
-    source_code_link: "https://github.com/alexpatego/P6-HotTakes-BACKEND",
+    source_code_link: "https://github.com/alexpatego/p6-hottakes-backend",
   },
   {
     name: "Booki",
@@ -177,8 +179,8 @@ const projects = [
       },
     ],
     image: booki,
-    source_code_link: "https://github.com/alexpatego/P2-Booki",
-    source_live_demo: "https://alexpatego.github.io/P2-Booki",
+    source_code_link: "https://github.com/alexpatego/p2-booki",
+    source_live_demo: "https://alexpatego.github.io/p2-booki",
   },
 ];
 

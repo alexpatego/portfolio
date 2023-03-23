@@ -17,7 +17,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`relative z-0 ${theme}`}>
+      <div className={` ${theme}`}>
         <div className="background">
           <Navbar setTheme={setTheme} />
           <Hero />
