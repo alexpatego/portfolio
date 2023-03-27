@@ -14,7 +14,7 @@ function Footer() {
         theme === "dark" ? "footer--dark" : "footer--light"
       }`}
     >
-      <p>2023 © Alexandre Patego portofolio</p>
+      <p>2023 © Alexandre Patego portfolio</p>
       <div className="footer__links">
         <img
           src={theme === "dark" ? githubDark : githubLight}
