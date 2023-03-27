@@ -13,12 +13,12 @@ import threejs from "../assets/technologies/threejs.svg";
 import figma from "../assets/technologies/figma.png";
 
 // projects
-import kasa from "../assets/works/kasaP7.png";
-import ohmyfood from "../assets/works/ohmyfoodP3.png";
-import kanap from "../assets/works/kanapP5.png";
-import booki from "../assets/works/bookiP2.png";
-import hottakes from "../assets/works/hottakesP6.png";
-import portofolio from "../assets/works/portofolio.png";
+import kasa from "../assets/kasaP7.png";
+import ohmyfood from "../assets/ohmyfoodP3.png";
+import kanap from "../assets/kanapP5.png";
+import booki from "../assets/bookiP2.png";
+import hottakes from "../assets/hottakesP6.png";
+import portofolio from "../assets/portofolio.png";
 
 const technologies = [
   {
