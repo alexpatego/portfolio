@@ -66,9 +66,9 @@ const about = [
 
 const projects = [
   {
-    name: "Portofolio",
+    name: "Portfolio",
     description:
-      "Mon portofolio avec un dark/light mode ainsi qu'une animation 3d avec threeJs",
+      "Mon portfolio avec un dark/light mode ainsi qu'une animation 3d avec threeJs",
     tags: [
       {
         name: "react",
@@ -84,7 +84,7 @@ const projects = [
       },
     ],
     image: portofolio,
-    source_code_link: "https://github.com/alexpatego/portofolio",
+    source_code_link: "https://github.com/alexpatego/portfolio",
     source_live_demo: "https://alexandrepatego.netlify.app/",
   },
   {
