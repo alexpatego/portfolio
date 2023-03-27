@@ -106,8 +106,10 @@ const Works = () => {
 
   return (
     <>
-      <motion.div variants={textAnimation} id="works">
-        <h2 className="text project__section--title">Mes projets</h2>
+      <motion.div variants={textAnimation}>
+        <h2 className="text project__section--title " id="works">
+          Mes projets
+        </h2>
       </motion.div>
       <div className="project__display">
         {projects.map((project, index) => (

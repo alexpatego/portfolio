@@ -76,9 +76,9 @@ const Navbar = ({ setTheme }) => {
               to="/a-propos"
               className="text"
               onClick={() => {
-                document
-                  .querySelector("#a-propos")
-                  .scrollIntoView({ behavior: "smooth" });
+                document.querySelector("#a-propos").scrollIntoView({
+                  behavior: "smooth",
+                });
                 toggleMenu();
               }}
             >
@@ -104,9 +104,9 @@ const Navbar = ({ setTheme }) => {
               to="/projets"
               className="text"
               onClick={() => {
-                document
-                  .querySelector("#works")
-                  .scrollIntoView({ behavior: "smooth" });
+                document.querySelector("#works").scrollIntoView({
+                  behavior: "smooth",
+                });
                 toggleMenu();
               }}
             >
@@ -118,9 +118,9 @@ const Navbar = ({ setTheme }) => {
               to="/contact"
               className="text"
               onClick={() => {
-                document
-                  .querySelector("#contact")
-                  .scrollIntoView({ behavior: "smooth" });
+                document.querySelector("#contact").scrollIntoView({
+                  behavior: "smooth",
+                });
                 toggleMenu();
               }}
             >

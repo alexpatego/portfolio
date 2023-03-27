@@ -60,7 +60,7 @@ const about = [
     name: "Bonjour, Alexandre Patego, Développeur",
     title: "A propos de moi",
     description:
-      "Je suis un jeune Développeur Web diplômé à l'issue d'une formation avec OpenClassroom, je suis à la recherche d'une alternance en tant que Développeur Front-End ou Full Stack afin de poursuivre ma formation. Les différents projets que j'ai effectués m'ont permis d'obtenir des compétences en HTML, CSS et JavaScript et plusieurs frameworks tels que React ou ThreeJS qui ont d'ailleurs permis de construire ce site. Je vous invite à découvrir mes projets ! ",
+      "Je suis un jeune Développeur Web diplômé à l'issue d'une formation avec OpenClassroom. Je suis à la recherche d'une alternance en tant que Développeur Front-End ou Full Stack afin de poursuivre ma formation. Les différents projets que j'ai effectués m'ont permis d'obtenir des compétences en HTML, CSS et JavaScript et plusieurs frameworks tels que React ou ThreeJS qui ont d'ailleurs permis de construire ce site. Je vous invite à découvrir mes projets ! ",
   },
 ];
 
@@ -85,7 +85,7 @@ const projects = [
     ],
     image: portofolio,
     source_code_link: "https://github.com/alexpatego/portofolio",
-    source_live_demo: "",
+    source_live_demo: "https://alexandrepatego.netlify.app/",
   },
   {
     name: "Kasa",
@@ -134,11 +134,15 @@ const projects = [
   {
     name: "Kanap",
     description:
-      "Site web de restauration, référencant des restaurant et leurs menus ",
+      "Projet site web e-commerce, traitement des scripts js ( * Projet sur serveur nodejs en local) ",
     tags: [
       {
         name: "javascript",
         color: "yellowTAG",
+      },
+      {
+        name: "nodeJS",
+        color: "greenlightTAG",
       },
     ],
     image: kanap,
@@ -147,7 +151,7 @@ const projects = [
   {
     name: "Hot Takes",
     description:
-      "Site web de restauration, référencant des restaurant et leurs menus ",
+      "Application de notation, création d'une API, mongodb ( * Projet sur serveur nodejs en local)",
     tags: [
       {
         name: "mongodb",
@@ -167,7 +171,8 @@ const projects = [
   },
   {
     name: "Booki",
-    description: "Projet 2, site web de réservation immobilières, CSS et HTML",
+    description:
+      "Projet 2, premier projet, site web statique de réservation immobilières, CSS et HTML",
     tags: [
       {
         name: "html",
