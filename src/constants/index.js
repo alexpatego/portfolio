@@ -13,12 +13,12 @@ import threejs from "../assets/technologies/threejs.svg";
 import figma from "../assets/technologies/figma.png";
 
 // projects
-import kasa from "../assets/kasaP7.png";
-import ohmyfood from "../assets/ohmyfoodP3.png";
-import kanap from "../assets/kanapP5.png";
-import booki from "../assets/bookiP2.png";
-import hottakes from "../assets/hottakesP6.png";
-import portofolio from "../assets/portofolio.png";
+import kasa from "../assets/kasaP7.webp";
+import ohmyfood from "../assets/ohmyfoodP3.webp";
+import kanap from "../assets/kanapP5.webp";
+import booki from "../assets/bookiP2.webp";
+import hottakes from "../assets/hottakesP6.webp";
+import portofolio from "../assets/portofolio.webp";
 
 const technologies = [
   {
@@ -120,7 +120,7 @@ const projects = [
       },
       {
         name: "css",
-        color: "purpleTAG",
+        color: "pinkTAG",
       },
       {
         name: "scss",
@@ -180,7 +180,7 @@ const projects = [
       },
       {
         name: "css",
-        color: "purpleTAG",
+        color: "pinkTAG",
       },
     ],
     image: booki,

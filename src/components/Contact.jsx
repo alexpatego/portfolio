@@ -115,30 +115,33 @@ function Contact() {
       >
         <h3>Me contacter</h3>
         <form ref={formRef} onSubmit={handleSubmit} className="contact__form">
-          <label htmlFor="">
+          <label htmlFor="name">
             <span>Votre nom</span>
             <input
               type="text"
               name="name"
+              id="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Quel est votre nom ?"
             />
           </label>
-          <label htmlFor="">
+          <label htmlFor="email">
             <span>Votre adresse email</span>
             <input
               type="email"
+              id="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Quel est votre email ?"
             />
           </label>
-          <label htmlFor="">
+          <label htmlFor="message">
             <span>Votre message</span>
             <textarea
               rows="8"
+              id="message"
               name="message"
               value={form.message}
               onChange={handleChange}
@@ -147,14 +150,16 @@ function Contact() {
           </label>
 
           {/* Add honeypot field to the form */}
-          <input
-            type="text"
-            name="honeypot"
-            value={form.honeypot}
-            onChange={handleChange}
-            style={honeypotStyle}
-          />
-
+          <label htmlFor="honeypot">
+            <input
+              type="text"
+              id="honeypot"
+              name="honeypot"
+              value={form.honeypot}
+              onChange={handleChange}
+              style={honeypotStyle}
+            />
+          </label>
           <button type="submit" name="Envoyer">
             {loading ? "En cours d'envoi..." : sent ? "Envoyé !" : "Envoyer"}
           </button>
