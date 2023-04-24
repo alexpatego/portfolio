@@ -63,7 +63,7 @@ const Navbar = ({ setTheme }) => {
     <nav className={`nav ${theme}`}>
       <div className="nav__container">
         <div className="nav__brand">
-          <img src={logo} />
+          <img src={logo} alt="logo" width="25px" height="25px" />
           <h1 className="text">Alexandre Patego</h1>
         </div>
         <ul
@@ -132,9 +132,21 @@ const Navbar = ({ setTheme }) => {
           {/* Toggle night mode, light mode tests the theme out*/}
           <div className="menu" onClick={toggleMenu}>
             {theme === "dark" ? (
-              <img src={menu_night} alt="menu" className="menu__night" />
+              <img
+                src={menu_night}
+                alt="menu"
+                className="menu__night"
+                width="30px"
+                height="30px"
+              />
             ) : (
-              <img src={menu_light} alt="menu" className="menu__light" />
+              <img
+                src={menu_light}
+                alt="menu"
+                className="menu__light"
+                width="30px"
+                height="30px"
+              />
             )}
           </div>
           <div>
@@ -143,6 +155,8 @@ const Navbar = ({ setTheme }) => {
                 src={sun}
                 alt="light mode"
                 onClick={handleThemeChange}
+                width="30px"
+                height="30px"
                 className={`sun ${theme === "dark" && "sun--dark"} ${
                   animateThemeChange && "sun--animate"
                 }`}
@@ -152,6 +166,8 @@ const Navbar = ({ setTheme }) => {
                 src={moon}
                 alt="night mode"
                 onClick={handleThemeChange}
+                width="30px"
+                height="30px"
                 className={`moon ${theme === "light" && "moon--light"} ${
                   animateThemeChange && "moon--animate"
                 }`}

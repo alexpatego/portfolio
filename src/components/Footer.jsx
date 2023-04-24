@@ -19,11 +19,15 @@ function Footer() {
         <img
           src={theme === "dark" ? githubDark : githubLight}
           alt="github"
+          width="50px"
+          height="50px"
           onClick={() => window.open("https://github.com/alexpatego", "_blank")}
         />
         <img
           src={theme === "dark" ? linkedinDark : linkedinLight}
           alt="linkedin"
+          width="50px"
+          height="50px"
           onClick={() =>
             window.open(
               "https://www.linkedin.com/in/alexandre-patego-07481b198/",

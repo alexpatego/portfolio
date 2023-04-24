@@ -23,6 +23,8 @@ const Presentation = () => {
           <img
             src={theme === "dark" ? linkedinDark : linkedinLight}
             alt="linkedin"
+            width="80px"
+            height="80px"
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/alexandre-patego-07481b198/",
@@ -33,6 +35,8 @@ const Presentation = () => {
           <img
             src={theme === "dark" ? githubDark : githubLight}
             alt="github"
+            width="80px"
+            height="80px"
             onClick={() =>
               window.open("https://github.com/alexpatego", "_blank")
             }
@@ -45,7 +49,7 @@ const Presentation = () => {
           <button>
             Télécharger CV
             <span>
-              <img src={dl} alt="téléchargement" />
+              <img src={dl} alt="téléchargement" width="35px" height="35px" />
             </span>
           </button>
         </a>
